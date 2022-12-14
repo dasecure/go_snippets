@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os"
 
@@ -21,12 +22,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-	// Modify the XMP data.
-	xmpData.SetProperty("http://ns.adobe.com/xap/1.0/", "Creator", "Vincent Ooi")
-
-	// Write the modified XMP data to the raw image file.
-	err = xmp.Write(f, xmpData)
-	if err != nil {
-		log.Fatal(err)
-	}
+	// Print the XMP data.
+	fmt.Println(xmpData)
 }
